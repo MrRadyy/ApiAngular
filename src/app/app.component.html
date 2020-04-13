@@ -1,8 +1,14 @@
 <div *ngFor='let Computer of Commputers$' style="text-align: center">
 
-  <h2> {{Computer.id}} - {{Computer.MacAddress}}</h2>
+  <table>
 
+
+   <tr>
+    <th>{{Computer.id}} - {{Computer.MacAddress}} - {{Computer.IsActive}} - {{Computer.Isallowed}}</th>
+   </tr>
+
+  </table>
 
 </div>
-asd
+
 <router-outlet></router-outlet>
