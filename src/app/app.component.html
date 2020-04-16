@@ -1,15 +1,30 @@
-<div *ngFor='let Computer of Commputers$' style="text-align: center">
-
-  <table class="border">
-
-
-
-   <tr>
-    <th>{{Computer.id}} - {{Computer.MacAddress}} - {{Computer.IsActive}} - {{Computer.Isallowed}}</th>
-   </tr>
-
-  </table>
-
+<div class="topnav">
+  <a href="">Create Template</a>
+  <a href="">Backups</a>
+  <a href="" class="active">Computers</a>
+  <a href="">Account</a>
 </div>
+
+<table class="ComputersTable">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <td>Mac Address</td>
+      <td>Active</td>
+      <td>Allowed</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor='let Computer of Commputers$' >
+      <td>{{Computer.id}}</td>
+      <td>{{Computer.MacAddress}}</td>
+      <td>{{Computer.IsActive}}</td>
+      <td>{{Computer.Isallowed}}</td>
+    </tr>
+  </tbody>
+
+</table>
+
 
 <router-outlet></router-outlet>
