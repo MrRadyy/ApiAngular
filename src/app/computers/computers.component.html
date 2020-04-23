@@ -1,0 +1,20 @@
+<table class="ComputersTable">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <td>Mac Address</td>
+    <td>Active</td>
+    <td>Allowed</td>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor='let Computer of Commputers$' >
+    <td>{{Computer.id}}</td>
+    <td>{{Computer.MacAddress}}</td>
+    <td>{{Computer.IsActive}}</td>
+    <td>{{Computer.Isallowed}}</td>
+  </tr>
+  </tbody>
+
+</table>

@@ -1,0 +1,50 @@
+
+/* TABLE START */
+
+table.ComputersTable {
+  border: 4px solid #555555;
+  background-color: #474747;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  margin-top: 5px;
+}
+table.ComputersTable td, table.ComputersTable th {
+  border: 1px solid #555555;
+  padding: 5px 10px;
+}
+table.ComputersTable tbody td {
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffffff;
+}
+table.ComputersTable thead {
+  background: #3494FA;
+  border-bottom: 10px solid #398AA4;
+}
+table.ComputersTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: left;
+  border-left: 2px solid #398AA4;
+}
+table.ComputersTable thead th:first-child {
+  border-left: none;
+}
+
+table.ComputersTable tfoot td {
+  font-size: 13px;
+}
+table.ComputersTable tfoot .links {
+  text-align: right;
+}
+table.ComputersTable tfoot .links a{
+  display: inline-block;
+  background: #FFFFFF;
+  color: #398AA4;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+/* TABLE END */

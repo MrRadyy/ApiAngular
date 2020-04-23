@@ -1,30 +1,11 @@
 <div class="topnav">
   <a href="">Create Template</a>
   <a href="">Backups</a>
-  <a href="" class="active">Computers</a>
-  <a href="">Account</a>
+  <a routerLink="computers.component" >Computers</a>
+  <a routerLink="users.component">Account</a>
 </div>
 
-<table class="ComputersTable">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <td>Mac Address</td>
-      <td>Active</td>
-      <td>Allowed</td>
-    </tr>
-  </thead>
 
-  <tbody>
-    <tr *ngFor='let Computer of Commputers$' >
-      <td>{{Computer.id}}</td>
-      <td>{{Computer.MacAddress}}</td>
-      <td>{{Computer.IsActive}}</td>
-      <td>{{Computer.Isallowed}}</td>
-    </tr>
-  </tbody>
-
-</table>
 
 
 <router-outlet></router-outlet>
