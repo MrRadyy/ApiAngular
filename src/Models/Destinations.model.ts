@@ -1,4 +1,4 @@
-export class Desninations {
+export class Destinations {
   id: number;
   FTP: string;
   Network: string;
