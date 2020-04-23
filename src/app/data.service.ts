@@ -10,22 +10,24 @@ import {Network_Logins} from '../Models/Network_Logins.model';
 import {Sources} from '../Models/Sources.model';
 import {Template} from '../Models/Template.model';
 import {users} from '../Models/Users.model';
+import {environment} from '../environments/environment';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-ComputerURL = 'http://localhost:3306/api/Computers';
-BackupURL = 'http://localhost:3306/api/Backup';
-DestinatonsURL = 'http://localhost:3306/api/Destinations';
-FTPLoginsURL = 'http://localhost:3306/api/FTP_Logins';
-JobsURL = 'http://localhost:3306/api/Jobs';
-LocalURL = 'http://localhost:3306/api/Local';
-NetworkLoginsURL = 'http://localhost:3306/api/';
-SourcesURL = 'http://localhost:3306/api/Sources';
-TemplateURL = 'http://localhost:3306/api/Template';
-UsersURL = 'http://localhost:3306/api/Users';
+ComputerURL = environment.apiUrl +  '/api/Computers';
+BackupURL =  environment.apiUrl +  '/api/Backup';
+DestinatonsURL = environment.apiUrl + '/api/Destinations';
+FTPLoginsURL = environment.apiUrl + '/api/FTP_Logins';
+JobsURL = environment.apiUrl +  '/api/Jobs';
+LocalURL = environment.apiUrl +  '/api/Local';
+NetworkLoginsURL = environment.apiUrl + '/api/Network_Logins';
+SourcesURL = environment.apiUrl +  '/api/Sources';
+TemplateURL = environment.apiUrl +  '/api/Template';
+UsersURL =  environment.apiUrl + '/api/Users';
 
   constructor(private  http: HttpClient) { }
 
