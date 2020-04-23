@@ -1,7 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Computer} from '../Models/Computers.model';
-import {DataService} from './data.service';
-
 
 @Component({
   selector: 'app-root',

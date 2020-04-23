@@ -17,7 +17,7 @@ import {users} from '../Models/Users.model';
 })
 export class DataService {
 ComputerURL = 'http://localhost:3306/api/Computers';
-BackupURL = 'http://localhost:3306/api/Backups';
+BackupURL = 'http://localhost:3306/api/Backup';
 DestinatonsURL = 'http://localhost:3306/api/Destinations';
 FTPLoginsURL = 'http://localhost:3306/api/FTP_Logins';
 JobsURL = 'http://localhost:3306/api/Jobs';

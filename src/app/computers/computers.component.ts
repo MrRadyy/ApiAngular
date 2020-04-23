@@ -9,10 +9,10 @@ import {DataService} from '../data.service';
 })
 
 export class ComputersComponent implements OnInit{
-  Commputers$:Computer[];
+  Commputers:Computer[];
   constructor(private  dataService: DataService) {}
 
-  ngOnInit(){ return this.dataService.getComputers().subscribe(data =>this.Commputers$ = data);  }
+  ngOnInit(){ return this.dataService.getComputers().subscribe(data =>this.Commputers = data);  }
 
 }
 
