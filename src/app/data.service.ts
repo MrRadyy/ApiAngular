@@ -10,6 +10,7 @@ import {Network_Logins} from '../Models/Network_Logins.model';
 import {Sources} from '../Models/Sources.model';
 import {Template} from '../Models/Template.model';
 import {users} from '../Models/Users.model';
+import {Tokens} from '../Models/Tokens.model';
 import {environment} from '../environments/environment';
 
 
@@ -28,6 +29,7 @@ NetworkLoginsURL = environment.apiUrl + '/api/Network_Logins';
 SourcesURL = environment.apiUrl +  '/api/Sources';
 TemplateURL = environment.apiUrl +  '/api/Template';
 UsersURL =  environment.apiUrl + '/api/Users';
+TokensURL = environment.apiUrl + '/api/Tokens';
 
   constructor(private  http: HttpClient) { }
 
