@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Computer} from '../Models/Computers.model';
 import {Backups} from '../Models/Backups.model';
 import {Destinations} from '../Models/Destinations.model';
@@ -19,26 +19,33 @@ import {environment} from '../environments/environment';
   providedIn: 'root'
 })
 export class DataService {
-ComputerURL = environment.apiUrl +  '/api/Computers';
-BackupURL =  environment.apiUrl +  '/api/Backup';
+ComputerURL = environment.apiUrl +  '/api/Computers/Get';
+BackupURL =  environment.apiUrl +  '/api/Backup/Get';
 DestinatonsURL = environment.apiUrl + '/api/Destinations';
 FTPLoginsURL = environment.apiUrl + '/api/FTP_Logins';
 JobsURL = environment.apiUrl +  '/api/Jobs';
 LocalURL = environment.apiUrl +  '/api/Local';
 NetworkLoginsURL = environment.apiUrl + '/api/Network_Logins';
 SourcesURL = environment.apiUrl +  '/api/Sources';
-TemplateURL = environment.apiUrl +  '/api/Template';
+TemplateURL = environment.apiUrl +  '/api/Template/Post';
 UsersURL =  environment.apiUrl + '/api/Users';
 TokensURL = environment.apiUrl + '/api/Tokens';
 
   constructor(private  http: HttpClient) { }
 
+  public httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'tok':  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1OTdmMjhkNi1lNWVmLTQyYzYtYTdhYy04M2Q0ZjI3YjNjNmUiLCJuYmYiOjE1ODg3MDgxNzYsImV4cCI6MTU4ODcxNTM3NiwiaWF0IjoxNTg4NzA4MTc2fQ.TEJTjKStOHPIpN0jY8KXk-TnSo1AEzUJjOuRl2qfGBw'
+    })
+  }
+
   getComputers() {
-return this.http.get<Computer[]>(this.ComputerURL);
+return this.http.get<Computer[]>(this.ComputerURL,this.httpOptions);
 }
 
   getBackup() {
-    return this.http.get<Backups[]>(this.BackupURL);
+    return this.http.get<Backups[]>(this.BackupURL,this.httpOptions);
   }
 
   getDestinations() {
@@ -75,5 +82,12 @@ return this.http.get<Computer[]>(this.ComputerURL);
   getUsers() {
 
     return this.http.get<users[]>(this.UsersURL);
+  }
+
+  PostTemplate(model: Template)
+  {
+
+
+    return this.http.post(this.TemplateURL,model, this.httpOptions).subscribe(temp=>{});
   }
 }
