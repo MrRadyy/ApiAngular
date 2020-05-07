@@ -15,7 +15,6 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
-import { LoginpageComponent } from './loginpage/loginpage.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +23,7 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
     UsersComponent,
     BackupsComponent,
     CTemplateComponent,
-    TeplateFormComponent,
-    LoginpageComponent
+    TeplateFormComponent
   ],
   imports: [
     BrowserModule,

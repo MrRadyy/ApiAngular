@@ -12,7 +12,6 @@ import {Template} from '../Models/Template.model';
 import {users} from '../Models/Users.model';
 import {Tokens} from '../Models/Tokens.model';
 import {environment} from '../environments/environment';
-import {UserNamePassword} from '../Models/UsernamePassword.model';
 
 
 
@@ -20,9 +19,7 @@ import {UserNamePassword} from '../Models/UsernamePassword.model';
   providedIn: 'root'
 })
 export class DataService {
-
-
-  ComputerURL = environment.apiUrl +  '/api/Computers/Get';
+ComputerURL = environment.apiUrl +  '/api/Computers/Get';
 BackupURL =  environment.apiUrl +  '/api/Backup/Get';
 DestinatonsURL = environment.apiUrl + '/api/Destinations';
 FTPLoginsURL = environment.apiUrl + '/api/FTP_Logins';
@@ -33,8 +30,6 @@ SourcesURL = environment.apiUrl +  '/api/Sources';
 TemplateURL = environment.apiUrl +  '/api/Template/Post';
 UsersURL =  environment.apiUrl + '/api/Users';
 TokensURL = environment.apiUrl + '/api/Tokens';
-TokensCreateURL = environment.apiUrl + '/api/Tokens/GetToken';
-TokensDeleteURL = environment.apiUrl + '/api/Tokens/DeleteToken';
 
   constructor(private  http: HttpClient) { }
 
@@ -95,19 +90,4 @@ return this.http.get<Computer[]>(this.ComputerURL,this.httpOptions);
 
     return this.http.post(this.TemplateURL,model, this.httpOptions).subscribe(temp=>{});
   }
-
-  Token: string;
-  PostToken(model: UserNamePassword): string
-  {
-
-    this.http.post<string>(this.TokensCreateURL,model).subscribe(item => this.Token = item);
-    return this.Token;
-
-  }
-
-  DeleteToken(){
-    this.http.delete(this.TokensDeleteURL, this.httpOptions).subscribe(item => {});
-  }
-
-
 }
