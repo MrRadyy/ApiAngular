@@ -12,7 +12,7 @@ import {Template} from '../Models/Template.model';
 import {users} from '../Models/Users.model';
 import {Tokens} from '../Models/Tokens.model';
 import {environment} from '../environments/environment';
-
+import {UserNamePassword} from '../Models/UsernamePassword';
 
 
 @Injectable({
@@ -28,8 +28,11 @@ LocalURL = environment.apiUrl +  '/api/Local';
 NetworkLoginsURL = environment.apiUrl + '/api/Network_Logins';
 SourcesURL = environment.apiUrl +  '/api/Sources';
 TemplateURL = environment.apiUrl +  '/api/Template/Post';
-UsersURL =  environment.apiUrl + '/api/Users';
+UsersURL =  environment.apiUrl + '/api/Users/Get';
 TokensURL = environment.apiUrl + '/api/Tokens';
+TokensCreateURL = environment.apiUrl + '/api/Tokens/GetToken';
+TokensDeleteURL = environment.apiUrl + '/api/Tokens/DeleteToken';
+
 
   constructor(private  http: HttpClient) { }
 
@@ -39,6 +42,7 @@ TokensURL = environment.apiUrl + '/api/Tokens';
       'tok':  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1OTdmMjhkNi1lNWVmLTQyYzYtYTdhYy04M2Q0ZjI3YjNjNmUiLCJuYmYiOjE1ODg3MDgxNzYsImV4cCI6MTU4ODcxNTM3NiwiaWF0IjoxNTg4NzA4MTc2fQ.TEJTjKStOHPIpN0jY8KXk-TnSo1AEzUJjOuRl2qfGBw'
     })
   }
+
 
   getComputers() {
 return this.http.get<Computer[]>(this.ComputerURL,this.httpOptions);
@@ -90,4 +94,20 @@ return this.http.get<Computer[]>(this.ComputerURL,this.httpOptions);
 
     return this.http.post(this.TemplateURL,model, this.httpOptions).subscribe(temp=>{});
   }
+
+  Token: string;
+  PostToken(model: UserNamePassword): string
+  {
+
+    this.http.post<string>(this.TokensCreateURL,model).subscribe(item => this.Token = item);
+    return this.Token;
+
+  }
+
+  DeleteToken(){
+    this.http.delete(this.TokensDeleteURL, this.httpOptions).subscribe(item => {});
+  }
+
+
+
 }
