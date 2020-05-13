@@ -28,7 +28,7 @@ LocalURL = environment.apiUrl +  '/api/Local';
 NetworkLoginsURL = environment.apiUrl + '/api/Network_Logins';
 SourcesURL = environment.apiUrl +  '/api/Sources';
 TemplateURL = environment.apiUrl +  '/api/Template/Post';
-UsersURL =  environment.apiUrl + '/api/Users/Get';
+UsersURL =  environment.apiUrl + '/api/User/Get';
 TokensURL = environment.apiUrl + '/api/Tokens';
 TokensCreateURL = environment.apiUrl + '/api/Tokens/GetToken';
 TokensDeleteURL = environment.apiUrl + '/api/Tokens/DeleteToken';
@@ -85,7 +85,7 @@ return this.http.get<Computer[]>(this.ComputerURL,this.httpOptions);
 
   getUsers() {
 
-    return this.http.get<users[]>(this.UsersURL);
+    return this.http.get<users[]>(this.UsersURL,this.httpOptions);
   }
 
   PostTemplate(model: Template)
