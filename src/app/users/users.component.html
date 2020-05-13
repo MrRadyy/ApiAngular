@@ -3,43 +3,34 @@
 <h1 class="Title">Account Details</h1>
 
 <body class="Page">
-
-<div class="labels" style="position: absolute;
- width: 250px;
-  top: 130px;
-
-   left: 10px">
-
-</div>
-
-
 <style>
-  #Center {margin: 0px auto; position: relative; width:800px;}
-  #Content {position: absolute; width: 500px; left: 350px}
-  #Labels {position: absolute; width: 150px;  left: 0px}
+  #obalovaci {margin: 0px auto; position: relative; width:800px;}
+  #obsah {position: absolute; width: 500px; top: 120px; left: 200px}
+  #levy {position: absolute; width: 150px; top: 120px; left: 0px}
 </style>
 
 
-<div id="Center">
-
-  <div  id="Content" *ngFor="let user of Users">
+<div id = obalovaci>
+<div id = levy>
+  <hr width="200" size="2" color="white" align="center" noshade>
+  <p>Name: </p>
+  <p>Surname: </p>
+  <p>Username: </p>
+  <p>Password: </p>
+  <p>Email: </p>
+  <p>Active: </p>
+  <hr width="200" size="2" color="white" align="center" noshade>
+</div>
+<div id = obsah *ngFor="let user of Users">
+  <hr width="280" size="2" color="white" align="left" noshade>
+    <p>{{user.Name}}</p>
+    <p>{{user.Suname}}</p>
     <p>{{user.Username}}</p>
     <p>{{user.Password}}</p>
-    <p>{{user.Name}}</p>
-    <p>{{user.Surname}}</p>
     <p>{{user.Email}}</p>
     <p>{{user.Active}}</p>
-  </div>
-
-  <div id="Labels">
-    <p>Username: </p>
-    <p>Password: </p>
-    <p>Name: </p>
-    <p>Surname: </p>
-    <p>Email: </p>
-    <p>Active: </p>
-    <hr width="850" size="1" color="white" align= "center"  noshade>
-  </div>
-  <hr width="850" size="1" color="white" align= "center"  noshade>
+  <hr width="280" size="2" color="white" align="left" noshade>
+</div>
 </div>
 </body>
+

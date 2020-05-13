@@ -3,7 +3,7 @@ export class users {
 
   id: number;
   Name: string;
-  Surname: string;
+  Suname: string;
   Username: string;
   Password: string;
   Email: string;
