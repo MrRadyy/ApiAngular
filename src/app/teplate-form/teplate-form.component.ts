@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {DataService} from '../data.service';
 import {Template} from '../../Models/Template.model';
+import {Jobs} from '../../Models/Jobs.model';
+
 
 
 @Component({
@@ -12,6 +14,7 @@ import {Template} from '../../Models/Template.model';
 export class TeplateFormComponent implements OnInit {
 
   myForm:FormGroup;
+  Job:Jobs[];
   constructor(private fb: FormBuilder , private  dataService: DataService) { }
 
   ngOnInit() {
@@ -19,36 +22,25 @@ export class TeplateFormComponent implements OnInit {
     this.myForm = this.fb.group({
       NameT:'',
       SelectG:'',
-      SelectD:'',
-      SelectTB:'',
-      Destination:'',
-
-
-
-  })
+      SelectTime:'',
+      SaveT:'',
+      Source:'',
+      TEST:''
+      }
+  ,
+       this.dataService.getJobs().subscribe(data =>this.Job = data))
 
 
   }
+  public Submit()
+  {
+    var temp = new Template();
+    temp.Template_Name = this.myForm.value.NameT;
+    temp.Type_Of_Backup = this.myForm.value.SelectG;
+    temp.Schedule = this.myForm.value.SelectTime;
+    temp.Source = this.myForm.value.Source;
+    temp.Save_Options = this.myForm.value.SaveT
+    this.dataService.PostTemplate(temp);
 
-
-public Submit()
-{
-
-  var Name =  (<HTMLInputElement>document.getElementById('Name')).value;
-
-  var FTP = (<HTMLSelectElement>document.getElementById('FTP'));
-  var Save = (<HTMLSelectElement>document.getElementById('Save'));
-  var Type = (<HTMLSelectElement>document.getElementById('Type'));
-  var Schedule =(<HTMLInputElement>document.getElementById('schedule')).value;
-  var Source = (<HTMLInputElement>document.getElementById('Source')).value;
-  var temp = new Template();
-  temp.Template_Name = Name ;
- // temp = FTP.innerText.trim();
-  temp.Type_Of_Backup = Type.innerText.trim();
-  temp.Schedule = Schedule;
-  temp.Source = Source;
-  temp.Save_Options = Save.innerText.trim();
-  this.dataService.PostTemplate(temp);
-
-}
+  }
 }

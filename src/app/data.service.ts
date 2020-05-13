@@ -61,7 +61,12 @@ return this.http.get<Computer[]>(this.ComputerURL,this.httpOptions);
   }
 
   getJobs() {
-    return this.http.get<Jobs[]>(this.JobsURL);
+    return this.http.get<Jobs[]>(this.JobsURL,this.httpOptions);
+  }
+
+  PostJob(model: Jobs)
+  {
+    return this.http.post(this.TemplateURL,model, this.httpOptions).subscribe(temp=>{});
   }
 
   getLocal() {

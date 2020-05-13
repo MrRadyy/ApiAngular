@@ -1,4 +1,6 @@
-<form id="Form" [formGroup]="myForm">
+
+<div  >
+<form id="Form" [formGroup]="myForm" >
   <hr>
   Name of Template:
  <mat-form-field>
@@ -7,7 +9,7 @@
   <br>
 Select type of backup:
   <mat-form-field>
-    <mat-select id="Type"  placeholder="Type">
+    <mat-select id="Type"  placeholder="Type" formControlName="SelectG">
       <mat-option  value="Full"> Full </mat-option>
       <mat-option  value="Diff"> Differencial </mat-option>
       <mat-option  value="Inc"> Incremental </mat-option>
@@ -15,10 +17,10 @@ Select type of backup:
   </mat-form-field>
 
   <br>
-  Select Destination:
-  <mat-form-field>
-    <mat-select id="FTP"  placeholder="Destination">
-      <mat-option  value="FTP"> FTP </mat-option>
+  Select Computer:
+  <mat-form-field >
+    <mat-select id="FTP"  placeholder="Select Computer" formControlName="TEST">
+      <mat-option value="FTP"> FTP </mat-option>
       <mat-option  value="Local"> Local </mat-option>
       <mat-option  value="Network"> Network </mat-option>
     </mat-select>
@@ -26,17 +28,17 @@ Select type of backup:
   <br>
   Set backup Date
   <mat-form-field >
-    <input id="schedule" matInput placeholder="Schedule" >
+    <input id="schedule" matInput placeholder="Schedule" formControlName="SelectTime" >
   </mat-form-field>
 <br>
   Source:
   <mat-form-field>
-    <input id="Source" matInput placeholder="Insert source ">
+    <input id="Source" matInput placeholder="Insert source " formControlName="Source">
   </mat-form-field>
   <br>
-  Select Destination:
+  Select save option:
   <mat-form-field>
-    <mat-select id="Save"  placeholder="Select save option">
+    <mat-select id="Save"  placeholder="Select save option" formControlName="SaveT">
       <mat-option  value="RAM"> RAM </mat-option>
       <mat-option  value="Plain"> Plain </mat-option>
     </mat-select>
