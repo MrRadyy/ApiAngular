@@ -14,7 +14,7 @@ import {Jobs} from '../../Models/Jobs.model';
 export class TeplateFormComponent implements OnInit {
 
   myForm:FormGroup;
-  Job:Jobs[];
+
   constructor(private fb: FormBuilder , private  dataService: DataService) { }
 
   ngOnInit() {
@@ -25,10 +25,9 @@ export class TeplateFormComponent implements OnInit {
       SelectTime:'',
       SaveT:'',
       Source:'',
-      TEST:''
+
       }
-  ,
-       this.dataService.getJobs().subscribe(data =>this.Job = data))
+  )
 
 
   }
@@ -39,7 +38,8 @@ export class TeplateFormComponent implements OnInit {
     temp.Type_Of_Backup = this.myForm.value.SelectG;
     temp.Schedule = this.myForm.value.SelectTime;
     temp.Source = this.myForm.value.Source;
-    temp.Save_Options = this.myForm.value.SaveT
+    temp.Save_Options = this.myForm.value.SaveT;
+
     this.dataService.PostTemplate(temp);
 
   }

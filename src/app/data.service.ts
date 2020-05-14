@@ -23,11 +23,13 @@ ComputerURL = environment.apiUrl +  '/api/Computers/Get';
 BackupURL =  environment.apiUrl +  '/api/Backup/Get';
 DestinatonsURL = environment.apiUrl + '/api/Destinations';
 FTPLoginsURL = environment.apiUrl + '/api/FTP_Logins';
-JobsURL = environment.apiUrl +  '/api/Jobs';
+GETJobsURL = environment.apiUrl +  '/api/Jobs/get';
+POSTJobsURL = environment.apiUrl+ '/api/Jobs/post';
 LocalURL = environment.apiUrl +  '/api/Local';
 NetworkLoginsURL = environment.apiUrl + '/api/Network_Logins';
 SourcesURL = environment.apiUrl +  '/api/Sources';
-TemplateURL = environment.apiUrl +  '/api/Template/Post';
+POSTTemplateURL = environment.apiUrl +  '/api/Template/Post';
+GETTemplateURL = environment.apiUrl + '/api/Template/get';
 UsersURL =  environment.apiUrl + '/api/User/Get';
 TokensURL = environment.apiUrl + '/api/Tokens';
 TokensCreateURL = environment.apiUrl + '/api/Tokens/GetToken';
@@ -61,12 +63,12 @@ return this.http.get<Computer[]>(this.ComputerURL,this.httpOptions);
   }
 
   getJobs() {
-    return this.http.get<Jobs[]>(this.JobsURL,this.httpOptions);
+    return this.http.get<Jobs[]>(this.GETJobsURL,this.httpOptions);
   }
 
   PostJob(model: Jobs)
   {
-    return this.http.post(this.TemplateURL,model, this.httpOptions).subscribe(temp=>{});
+    return this.http.post(this.POSTJobsURL,model, this.httpOptions).subscribe(temp=>{});
   }
 
   getLocal() {
@@ -85,7 +87,7 @@ return this.http.get<Computer[]>(this.ComputerURL,this.httpOptions);
 
   getTemplate() {
 
-    return this.http.get<Template[]>(this.TemplateURL);
+    return this.http.get<Template[]>(this.GETTemplateURL,this.httpOptions);
   }
 
   getUsers() {
@@ -95,9 +97,7 @@ return this.http.get<Computer[]>(this.ComputerURL,this.httpOptions);
 
   PostTemplate(model: Template)
   {
-
-
-    return this.http.post(this.TemplateURL,model, this.httpOptions).subscribe(temp=>{});
+    return this.http.post(this.POSTTemplateURL,model, this.httpOptions).subscribe(temp=>{});
   }
 
   Token: string;
