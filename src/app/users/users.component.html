@@ -4,14 +4,14 @@
 
 <body class="Page">
 <style>
-  #obalovaci {margin: 0px auto; position: relative; width:800px;}
-  #obsah {position: absolute; width: 500px; top: 120px; left: 200px}
-  #levy {position: absolute; width: 150px; top: 120px; left: 0px}
+  #wrap {margin: 0px auto; position: relative; width:800px;}
+  #content {position: absolute; width: 500px; top: 120px; left: 200px}
+  #labels {position: absolute; width: 150px; top: 120px; left: 0px}
 </style>
 
 
-<div id = obalovaci>
-<div id = levy>
+<div id = wrap>
+<div id = labels>
   <hr width="200" size="2" color="white" align="center" noshade>
   <p>Name: </p>
   <p>Surname: </p>
@@ -21,7 +21,7 @@
   <p>Active: </p>
   <hr width="200" size="2" color="white" align="center" noshade>
 </div>
-<div id = obsah *ngFor="let user of Users">
+<div id = content *ngFor="let user of Users">
   <hr width="280" size="2" color="white" align="left" noshade>
     <p>{{user.Name}}</p>
     <p>{{user.Suname}}</p>
@@ -32,5 +32,7 @@
   <hr width="280" size="2" color="white" align="left" noshade>
 </div>
 </div>
+
+
 </body>
 

@@ -1,24 +1,24 @@
+<div style="text-align: center;">
+<div class="Form" style="display: inline-block; text-align: left;" >
 
-<div  >
 <form id="Form" [formGroup]="myForm" >
   <hr>
-  Name of Template:
- <mat-form-field>
+  <label class="labels">Name of Template:</label>
+ <mat-form-field class="wrap">
    <input id="Name" matInput placeholder="Name it" formControlName="NameT">
  </mat-form-field>
   <br>
-Select type of backup:
-  <mat-form-field>
+<label class="labels">Select type of backup:</label>
+  <mat-form-field class="wrap">
     <mat-select id="Type"  placeholder="Type" formControlName="SelectG">
       <mat-option  value="Full"> Full </mat-option>
       <mat-option  value="Diff"> Differencial </mat-option>
       <mat-option  value="Inc"> Incremental </mat-option>
     </mat-select>
   </mat-form-field>
-
   <br>
-  Select Computer:
-  <mat-form-field >
+  <label class="labels"> Select Computer:</label>
+  <mat-form-field class="wrap">
     <mat-select id="FTP"  placeholder="Select Computer" formControlName="TEST">
       <mat-option value="FTP"> FTP </mat-option>
       <mat-option  value="Local"> Local </mat-option>
@@ -26,18 +26,18 @@ Select type of backup:
     </mat-select>
   </mat-form-field>
   <br>
-  Set backup Date
-  <mat-form-field >
+  <label class="labels">Set backup Date:</label>
+  <mat-form-field class="wrap">
     <input id="schedule" matInput placeholder="Schedule" formControlName="SelectTime" >
   </mat-form-field>
 <br>
-  Source:
-  <mat-form-field>
+  <label class="labels">Source:</label>
+  <mat-form-field class="wrap">
     <input id="Source" matInput placeholder="Insert source " formControlName="Source">
   </mat-form-field>
   <br>
-  Select save option:
-  <mat-form-field>
+  <label class="labels">Select save option:</label>
+  <mat-form-field class="wrap">
     <mat-select id="Save"  placeholder="Select save option" formControlName="SaveT">
       <mat-option  value="RAM"> RAM </mat-option>
       <mat-option  value="Plain"> Plain </mat-option>
@@ -45,7 +45,9 @@ Select type of backup:
   </mat-form-field>
 <br>
 
+  <button class="button" type="submit" (click)="Submit()">Create Template</button>
 
-  <button mat-button color="primary" type="submit" (click)="Submit()">Create Template</button>
+
 
 </form>
+  <hr class="Line">

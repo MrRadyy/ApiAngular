@@ -1,20 +1,25 @@
-<form id="Form" [formGroup]="myForm" >
 
+<div style="text-align: center;">
+  <div class="Form" style="display: inline-block; text-align: left;" >
 
-  <mat-form-field>
+<form class="JobForm" id="Form" [formGroup]="myForm" >
+
+  <mat-form-field class="SelectOfTemplate">
     <mat-select id="CID"  placeholder="Template ID" formControlName="TempID" >
       <mat-option  *ngFor="let Template of Template" value="{{Template.id}} " > {{Template.id}} </mat-option>
     </mat-select>
   </mat-form-field>
 
 
-  <mat-form-field>
+  <mat-form-field class="SelectOfComputer">
     <mat-select id="TID"  placeholder="Computer ID" formControlName="CompID" >
       <mat-option  value="{{Computer.id}}"  *ngFor="let Computer of Computer" >   {{Computer.id}}</mat-option>
     </mat-select>
   </mat-form-field>
 <br>
+<div align="center">
+  <button class="Button" mat-button color="primary" type="submit" (click)="Submit()">Submit </button>
+</div>
 
-  <button mat-button color="primary" type="submit" (click)="Submit()">Submit </button>
 
 </form>

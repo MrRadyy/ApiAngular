@@ -1,0 +1,46 @@
+.Form {
+  padding-left: 50px;
+  padding-top: 100px;
+  padding-right: 50px;
+  float: initial;
+}
+
+.Line {
+  margin-top: 30px;
+  position: page;
+
+}
+
+.button {
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  transition-duration: 0.4s;
+  color: white;
+  background-color: #333333;
+  text-align: center;
+  text-decoration: ButtonShadow ;
+}
+
+
+.button:hover {
+  background-color: #82baf5;
+  color: black;
+}
+
+
+
+
+.labels {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+
+.wrap {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
