@@ -25,7 +25,7 @@ export class TeplateFormComponent implements OnInit {
       SelectTime:'',
       SaveT:'',
       Source:'',
-
+      Destination:'',
       }
   )
 
@@ -39,8 +39,9 @@ export class TeplateFormComponent implements OnInit {
     temp.Schedule = this.myForm.value.SelectTime;
     temp.Source = this.myForm.value.Source;
     temp.Save_Options = this.myForm.value.SaveT;
-
+    temp.Destination = this.myForm.value.Destination
     this.dataService.PostTemplate(temp);
-
+    alert('Template submited');
   }
+
 }

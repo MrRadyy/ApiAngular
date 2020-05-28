@@ -8,5 +8,5 @@ export class Template {
   // tslint:disable-next-line:variable-name
   Save_Options: string;
   Schedule: string;
-
+  Destination:string;
 }

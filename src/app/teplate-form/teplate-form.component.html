@@ -17,15 +17,8 @@
     </mat-select>
   </mat-form-field>
   <br>
-  <label class="labels"> Select Computer:</label>
-  <mat-form-field class="wrap">
-    <mat-select id="FTP"  placeholder="Select Computer" formControlName="TEST">
-      <mat-option value="FTP"> FTP </mat-option>
-      <mat-option  value="Local"> Local </mat-option>
-      <mat-option  value="Network"> Network </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <br>
+
+    <br>
   <label class="labels">Set backup Date:</label>
   <mat-form-field class="wrap">
     <input id="schedule" matInput placeholder="Schedule" formControlName="SelectTime" >
@@ -34,6 +27,10 @@
   <label class="labels">Source:</label>
   <mat-form-field class="wrap">
     <input id="Source" matInput placeholder="Insert source " formControlName="Source">
+  </mat-form-field>
+  <label class="labels">Destination:</label>
+  <mat-form-field class="wrap">
+    <input id="Destination" matInput placeholder="Insert Destination " formControlName="Destination">
   </mat-form-field>
   <br>
   <label class="labels">Select save option:</label>

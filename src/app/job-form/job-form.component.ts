@@ -32,13 +32,15 @@ Template:Template[];
 
   public Submit()
   {
-    var temp = new Jobs()
+    let temp = new Jobs()
     temp.ID_Computer = this.myForm.value.CompID;
     temp.ID_Template = this.myForm.value.TempID;
    // alert(temp.ID_Computer) ;
     this.dataService.PostJob(temp);
+    alert('Job submited');
 
 
   }
+
 
 }
