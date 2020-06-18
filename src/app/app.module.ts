@@ -17,6 +17,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 import { JobFormComponent } from './job-form/job-form.component';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { JobFormComponent } from './job-form/job-form.component';
     MatSelectModule,
     MatInputModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    GoogleChartsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

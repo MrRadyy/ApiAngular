@@ -1,14 +1,37 @@
-<div class="topnav">
-<a routerLink="job-form.component">Asign Job</a>
-<a routerLink="teplate-form.component">Create Template</a>
-<a routerLink="backup.component">Backups</a>
-<a routerLink="computers.component" >Computers</a>
-<a routerLink="loginpage.component" >Loginpage</a>
-<a style="float:right" routerLink="users.component">Account</a>
-<a (click)="SignOut()">Sign Out</a>
+
+
+
+<div class="page">
+  <header tabindex="0">Backup maker 2020 </header>
+  <div id="nav-container">
+    <div class="bg"></div>
+    <div class="button" tabindex="0">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div id="nav-content" tabindex="0">
+      <ul>
+        <li> <a routerLink="job-form.component">Asign Job</a></li>
+        <li><a routerLink="teplate-form.component">Create Template</a><li>
+        <li><a routerLink="backup.component">Backups</a></li>
+        <li><a routerLink="computers.component" >Computers</a></li>
+        <li><a routerLink="loginpage.component" >Loginpage</a></li>
+      <li> <a style="float:right" routerLink="users.component">Account</a></li>
+        <li class="small"><a href="#0">Facebook</a><a href="#0">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  <google-chart class="char"#chart
+                [title]="title"
+                [type]="type"
+                [data]="data"
+                [options]="options"
+                [width]="width"
+                [height]="height">
+    </google-chart>
+
 </div>
 
 
-
-
-<router-outlet></router-outlet>

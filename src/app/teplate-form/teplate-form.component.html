@@ -5,8 +5,8 @@
   <hr>
   <label class="labels">Name of Template:</label>
  <mat-form-field class="wrap">
-   <input id="Name" matInput placeholder="Name it" formControlName="NameT">
- </mat-form-field>
+  <input id="Name" matInput placeholder="Name it" formControlName="NameT">
+</mat-form-field>
   <br>
 <label class="labels">Select type of backup:</label>
   <mat-form-field class="wrap">
@@ -43,8 +43,17 @@
       <mat-option  value="RAM"> RAM </mat-option>
       <mat-option  value="Plain"> Plain </mat-option>
     </mat-select>
-  </mat-form-field>
+      </mat-form-field>
 <br>
+  <label class="labels">FTP Username</label>
+  <mat-form-field class="wrap">
+    <input id="Username" matInput placeholder="Username" formControlName="Username" >
+  </mat-form-field>
+  <br>
+  <label class="labels">FTP Password</label>
+  <mat-form-field class="wrap">
+    <input id="password" matInput placeholder="password" formControlName="password" >
+  </mat-form-field>
 
   <button class="button" type="submit" (click)="Submit()">Create Template</button>
 

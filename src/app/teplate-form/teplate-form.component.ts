@@ -3,6 +3,8 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {DataService} from '../data.service';
 import {Template} from '../../Models/Template.model';
 import {Jobs} from '../../Models/Jobs.model';
+import {FTP_Logins} from '../../Models/FTP_Logins.model';
+import {filterToMembersWithDecorator} from '@angular/compiler-cli/src/ngtsc/reflection';
 
 
 
@@ -26,7 +28,9 @@ export class TeplateFormComponent implements OnInit {
       SaveT:'',
       Source:'',
       Destination:'',
-      }
+      Username:'',
+      Password:''
+    }
   )
 
 
@@ -34,12 +38,16 @@ export class TeplateFormComponent implements OnInit {
   public Submit()
   {
     var temp = new Template();
+    var ftp = new FTP_Logins();
     temp.Template_Name = this.myForm.value.NameT;
     temp.Type_Of_Backup = this.myForm.value.SelectG;
     temp.Schedule = this.myForm.value.SelectTime;
     temp.Source = this.myForm.value.Source;
     temp.Save_Options = this.myForm.value.SaveT;
-    temp.Destination = this.myForm.value.Destination
+    temp.Destination = this.myForm.value.Destination;
+    ftp.Login = this.myForm.value.Username;
+    ftp.Password = this.myForm.value.Password;
+   this.dataService.PostLogins(ftp);
     this.dataService.PostTemplate(temp);
     alert('Template submited');
   }

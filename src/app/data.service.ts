@@ -23,7 +23,8 @@ ComputerURL = environment.apiUrl +  '/api/Computers/Get';
 BackupURL =  environment.apiUrl +  '/api/Backup/Get';
 POSTBackupURL =  environment.apiUrl +  '/api/Backup/Post';
 DestinatonsURL = environment.apiUrl + '/api/Destinations';
-FTPLoginsURL = environment.apiUrl + '/api/FTP_Logins';
+FTPLoginsURL = environment.apiUrl + '/api/FTP_Logins/get';
+POSTFTPLoginsURL = environment.apiUrl + '/api/FTP_Logins/post';
 GETJobsURL = environment.apiUrl +  '/api/Jobs/get';
 POSTJobsURL = environment.apiUrl+ '/api/Jobs/post';
 LocalURL = environment.apiUrl +  '/api/Local';
@@ -66,7 +67,10 @@ return this.http.get<Computer[]>(this.ComputerURL,this.httpOptions);
   getJobs() {
     return this.http.get<Jobs[]>(this.GETJobsURL,this.httpOptions);
   }
-
+  PostLogins(model: FTP_Logins)
+  {
+    return this.http.post(this.POSTFTPLoginsURL,model, this.httpOptions).subscribe(temp=>{});
+  }
   PostJob(model: Jobs)
   {
     return this.http.post(this.POSTJobsURL,model, this.httpOptions).subscribe(temp=>{});
