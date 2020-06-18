@@ -21,6 +21,7 @@ import {UserNamePassword} from '../Models/UsernamePassword';
 export class DataService {
 ComputerURL = environment.apiUrl +  '/api/Computers/Get';
 BackupURL =  environment.apiUrl +  '/api/Backup/Get';
+POSTBackupURL =  environment.apiUrl +  '/api/Backup/Post';
 DestinatonsURL = environment.apiUrl + '/api/Destinations';
 FTPLoginsURL = environment.apiUrl + '/api/FTP_Logins';
 GETJobsURL = environment.apiUrl +  '/api/Jobs/get';
@@ -98,6 +99,11 @@ return this.http.get<Computer[]>(this.ComputerURL,this.httpOptions);
   PostTemplate(model: Template)
   {
     return this.http.post(this.POSTTemplateURL,model, this.httpOptions).subscribe(temp=>{});
+  }
+
+  PostBackup(model: Template)
+  {
+    return this.http.post(this.POSTBackupURL,model, this.httpOptions).subscribe(temp=>{});
   }
 
   Token: string;
